@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nail Art Portfolio</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Nail Art Portfolio</h1>
+        <p>Welcome to my collection of nail art creations!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate nail artist who loves creating unique and personalized nail designs for clients. 
+        Every design is a piece of art crafted with care and attention to detail.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="images/nail1.jpg" alt="Nail Art 1"></div>
+            <div class="gallery-item"><img src="images/nail2.jpg" alt="Nail Art 2"></div>
+            <div class="gallery-item"><img src="images/nail3.jpg" alt="Nail Art 3"></div>
+            <div class="gallery-item"><img src="images/nail4.jpg" alt="Nail Art 4"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nail Art Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            if (category === 'all') {
+                items.forEach(item => item.style.display = 'block');
+            } else {
+                items.forEach(item => {
+                    item.style.display = item.classList.contains(category) ? 'block' : 'none';
+                });
+            }
+        }
+    </script>
+</body>
+</html>
