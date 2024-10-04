@@ -226,6 +226,10 @@ footer .socials a:hover {
     color: var(--secondary-color);
 }
 
+footer .socials a .fa-envelope {
+    font-size: 1.4rem;
+}
+
 #loading-screen {
     position: fixed;
     width: 100%;
