@@ -7,7 +7,9 @@
     <title>Nail Art Portfolio</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Explore unique and personalized nail art designs by a passionate nail artist. View my gallery, read client testimonials, and get in touch for your own custom nail art.">
 </head>
 <body>
 
@@ -22,7 +24,7 @@
         <p>Welcome to my collection of nail art creations!</p>
     </header>
 
-    <nav>
+    <nav aria-label="Main Navigation">
         <ul>
             <li><a href="#about">About Me</a></li>
             <li><a href="#gallery">Gallery</a></li>
@@ -31,57 +33,59 @@
         </ul>
     </nav>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a passionate nail artist who loves creating unique and personalized nail designs for clients. 
-        Every design is a piece of art crafted with care and attention to detail.</p>
-    </section>
+    <main>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate nail artist who loves creating unique and personalized nail designs for clients. 
+            Every design is a piece of art crafted with care and attention to detail.</p>
+        </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2>My Work</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/nail1.jpg" alt="Nail Art 1"></div>
-            <div class="gallery-item"><img src="images/nail2.jpg" alt="Nail Art 2"></div>
-            <div class="gallery-item"><img src="images/nail3.jpg" alt="Nail Art 3"></div>
-            <div class="gallery-item"><img src="images/nail4.jpg" alt="Nail Art 4"></div>
-        </div>
-    </section>
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <h2>My Work</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/nail1.jpg" alt="Detailed description of Nail Art 1"></div>
+                <div class="gallery-item"><img src="images/nail2.jpg" alt="Detailed description of Nail Art 2"></div>
+                <div class="gallery-item"><img src="images/nail3.jpg" alt="Detailed description of Nail Art 3"></div>
+                <div class="gallery-item"><img src="images/nail4.jpg" alt="Detailed description of Nail Art 4"></div>
+            </div>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>What Clients Say</h2>
-        <div class="testimonial">
-            <p>"The most creative and intricate nail art I've ever had!"</p>
-            <span>- Jessica</span>
-        </div>
-        <div class="testimonial">
-            <p>"Amazing attention to detail and so fun to work with!"</p>
-            <span>- Samantha</span>
-        </div>
-        <div class="testimonial">
-            <p>"Always leaves me in awe with every new design. Highly recommend!"</p>
-            <span>- Monica</span>
-        </div>
-    </section>
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2>What Clients Say</h2>
+            <div class="testimonial">
+                <p>"The most creative and intricate nail art I've ever had!"</p>
+                <span>- Jessica</span>
+            </div>
+            <div class="testimonial">
+                <p>"Amazing attention to detail and so fun to work with!"</p>
+                <span>- Samantha</span>
+            </div>
+            <div class="testimonial">
+                <p>"Always leaves me in awe with every new design. Highly recommend!"</p>
+                <span>- Monica</span>
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Get in Touch</h2>
-        <form action="submit.html" method="post">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Your Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <form action="submit.php" method="post">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required aria-label="Your Name">
+                
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required aria-label="Email Address">
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" required aria-label="Your Message"></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
 
     <button id="back-to-top" onclick="scrollToTop()">↑</button>
 
@@ -95,53 +99,21 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+    <noscript>
+        <p>Please enable JavaScript for the best experience on this site.</p>
+    </noscript>
 
-        // Back to Top Button
-        const backToTopButton = document.getElementById("back-to-top");
-        window.onscroll = function() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Loading Screen
-        window.addEventListener('load', () => {
-            document.getElementById('loading-screen').style.display = 'none';
-        });
-
-        // Lightbox for gallery images
-        document.querySelectorAll('.gallery-item img').forEach(image => {
-            image.addEventListener('click', function() {
-                const src = this.src;
-                const lightbox = document.createElement('div');
-                lightbox.classList.add('lightbox');
-                document.body.appendChild(lightbox);
-                const img = document.createElement('img');
-                img.src = src;
-                lightbox.appendChild(img);
-                lightbox.addEventListener('click', () => {
-                    lightbox.remove();
-                });
-            });
-        });
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Your Name",
+      "jobTitle": "Nail Artist",
+      "url": "https://www.yournailartportfolio.com"
+    }
     </script>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
 </body>
 </html>
-
