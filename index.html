@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +28,7 @@
     </section>
 
     <section id="gallery">
-        <h2>Gallery</h2>
+        <h2>My Work</h2>
         <div class="gallery-grid">
             <div class="gallery-item"><img src="images/nail1.jpg" alt="Nail Art 1"></div>
             <div class="gallery-item"><img src="images/nail2.jpg" alt="Nail Art 2"></div>
@@ -38,8 +37,15 @@
         </div>
     </section>
 
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
+
     <footer>
         <p>&copy; 2024 Nail Art Portfolio. All rights reserved.</p>
+        <div class="socials">
+            <a href="https://instagram.com" target="_blank">Instagram</a> |
+            <a href="https://twitter.com" target="_blank">Twitter</a> |
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+        </div>
     </footer>
 
     <script>
@@ -52,6 +58,30 @@
                     item.style.display = item.classList.contains(category) ? 'block' : 'none';
                 });
             }
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById("back-to-top");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
