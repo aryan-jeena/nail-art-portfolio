@@ -22,11 +22,12 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    font-size: 16px;
 }
 
 header {
     text-align: center;
-    padding: 60px 0;
+    padding: 30px 0;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
 }
@@ -37,23 +38,26 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 10px;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -71,21 +75,28 @@ nav ul {
     list-style: none;
     text-align: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 10px 0;
 }
 
 nav ul li a {
     color: var(--primary-color);
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul li a:hover {
@@ -95,18 +106,18 @@ nav ul li a:hover {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
 section {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 #about, #testimonials, #contact {
     background-color: var(--white);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 40px;
+    padding: 20px;
 }
 
 #gallery {
@@ -115,9 +126,9 @@ section {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 30px 0;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .gallery-item {
@@ -130,7 +141,7 @@ section {
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -146,24 +157,24 @@ section {
 .testimonial {
     background-color: var(--secondary-color);
     border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 20px;
+    margin-bottom: 20px;
     position: relative;
 }
 
 .testimonial::before {
     content: '"';
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--primary-color);
     position: absolute;
-    top: -20px;
-    left: 20px;
+    top: -10px;
+    left: 10px;
     opacity: 0.5;
 }
 
 .testimonial p {
     font-style: italic;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .testimonial span {
@@ -179,8 +190,8 @@ form {
 }
 
 input, textarea {
-    margin-bottom: 20px;
-    padding: 12px;
+    margin-bottom: 15px;
+    padding: 10px;
     border: 1px solid var(--secondary-color);
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
@@ -197,6 +208,7 @@ button[type="submit"] {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    min-height: 44px;
 }
 
 button[type="submit"]:hover {
@@ -208,7 +220,7 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 footer .socials {
@@ -220,6 +232,11 @@ footer .socials a {
     margin: 0 10px;
     font-size: 1.5rem;
     transition: color 0.3s ease;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer .socials a:hover {
@@ -246,8 +263,8 @@ footer .socials a .fa-envelope {
     border: 16px solid var(--secondary-color);
     border-top: 16px solid var(--primary-color);
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     animation: spin 2s linear infinite;
 }
 
@@ -288,6 +305,8 @@ footer .socials a .fa-envelope {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 1.2rem;
+    min-height: 44px;
+    min-width: 44px;
 }
 
 #back-to-top:hover {
@@ -299,48 +318,78 @@ a:focus, button:focus {
     outline-offset: 2px;
 }
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
     }
 
-    h2 {
-        font-size: 2rem;
+    header {
+        padding: 50px 0;
+    }
+
+    h1 {
+        font-size: 3.5rem;
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 0 15px;
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    #about, #testimonials, #contact {
-        padding: 20px;
-    }
-}
-
-@media print {
-    nav, #back-to-top, .socials, #loading-screen {
+    .menu-toggle {
         display: none;
     }
 
-    body {
-        background-color: var(--white);
-        color: var(--text-color);
-    }
-
-    #about, #testimonials, #contact {
-        background: none;
-        box-shadow: none;
+    nav ul {
+        display: flex !important;
     }
 }
 
-.gallery-item img, #back-to-top, .loader {
-    transform: translateZ(0);
+/* Desktop screens */
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 767px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+}
+
+/* Optimize images */
+img {
+    max-width: 100%;
+    height: auto;
 }
