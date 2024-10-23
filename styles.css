@@ -5,6 +5,7 @@
   --background-color: #FFF0F5; /* Lavender Blush */
   --text-color: #4A4A4A; /* Dark Gray */
   --white: #FFFFFF;
+  --instruction-color: #FF1493; /* Using accent color for instructions */
 }
 
 * {
@@ -113,6 +114,14 @@ section {
     text-align: center;
 }
 
+.instructions {
+    font-size: 1rem; /* Smaller than the section title */
+    color: var(--instruction-color);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -126,7 +135,7 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    aspect-ratio: 1 / 1; /* This creates a square aspect ratio */
+    aspect-ratio: 1 / 1;
 }
 
 .gallery-item img {
@@ -152,7 +161,7 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 105, 180, 0.8); /* Semi-transparent hot pink */
+    background-color: rgba(255, 105, 180, 0.8);
     color: white;
     padding: 10px;
     text-align: center;
@@ -329,6 +338,10 @@ a:focus, button:focus {
 
     h2 {
         font-size: 2rem;
+    }
+
+    .instructions {
+        font-size: 0.9rem;
     }
 
     nav ul {
