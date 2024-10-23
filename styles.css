@@ -126,11 +126,15 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1; /* This creates a square aspect ratio */
 }
 
 .gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
